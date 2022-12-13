@@ -1,4 +1,14 @@
-function dayTimeToday(dtt) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
   let days = [
     "Sunday",
     "Monday",
@@ -8,22 +18,10 @@ function dayTimeToday(dtt) {
     "Friday",
     "Saturday",
   ];
-
-  let day = days[dtt.getDay()];
-  let hour = dtt.getHours();
-  let minutes = dtt.getMinutes();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
+  let day = days[date.getDay()];
 
   return `${day} ${hour}:${minutes}`;
 }
-let now = new Date();
-let displaydtt = document.querySelector("#time");
-displaydtt.innerHTML = dayTimeToday(now);
 
 //City Search
 
@@ -45,6 +43,9 @@ function showCityWeather(response) {
   );
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
+  );
+  document.querySelector("#time").innerHTML = formatDate(
+    response.data.dt * 1000
   );
 }
 
@@ -85,6 +86,9 @@ function showLocWeather(response) {
   );
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
+  );
+  document.querySelector("#time").innerHTML = formatDate(
+    response.data.dt * 1000
   );
 }
 
