@@ -27,6 +27,12 @@ h3 {
   font-size: 25px;
 }
 
+small {
+  color: white;
+  padding: 20px 0px 20px 20px;
+  font-size: 12px;
+}
+
 .text-field {
   padding: 5px 80px;
   border: none;
@@ -63,7 +69,11 @@ h3 {
   text-align: center;
   color: white;
   margin: 20px 0 20px 0;
-  padding: 20px 0 50px 0;
+  padding: 20px 0 20px 0;
+}
+
+.row-4 {
+  padding: 0 0 20px 20px;
 }
 
 .small-weather-1,
@@ -126,4 +136,13 @@ h3 {
 
 .description {
   padding: 0px 10px;
+}
+
+.git-hub-link {
+  color: white;
+  text-decoration: none;
+}
+
+.git-hub-link:hover {
+  color: lightgray;
 }
