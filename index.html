@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+
+    <!--bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+
+    <!--fontawesome-->
+    <script
+      src="https://kit.fontawesome.com/d93425bad7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--font family-->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Quicksand:wght@300&display=swap");
+    </style>
+
+    <!--AXIOS-->
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <!--CSS Styles-->
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <!--Search-->
+    <div class="container">
+      <div class="row row-1">
+        <div class="col-4 colbutton">
+          <button class="location-button" id="location">
+            Current location
+          </button>
+        </div>
+
+        <div class="col-8 colform">
+          <form id="search-form">
+            <input
+              class="text-field"
+              type="search"
+              autocomplete="off"
+              placeholder="search location"
+              id="city-search"
+            />
+            <input class="go-button" type="submit" value="Go" />
+          </form>
+        </div>
+      </div>
+
+      <!--Weather today-->
+      <div class="row row-2">
+        <div class="col">
+          <i class="fa-solid fa-cloud-sun large-weather"></i>
+        </div>
+        <div class="col large-temperature">
+          <h3>
+            <span class="temperature" id="temperature">14</span
+            ><a href="#" class="celsius" id="celsius">°C </a>|
+            <a href="#" class="fahrenheit" id="fah">°F</a>
+          </h3>
+          <div class="description" id="description">Sunny</div>
+          <div class="info">
+            Humidity: <span id="humidity">90</span>%
+            <br />
+            Wind: <span id="wind">1</span> km/h
+          </div>
+        </div>
+        <div class="col large-city">
+          <h1 id="city">Location</h1>
+          <div class="time" id="time">Tuesday 18:00</div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+
+      <!--5 days forecast-->
+      <div class="row row-3">
+        <div class="col">
+          <p>wed</p>
+          <div class="small-weather-1">
+            <i class="fa-solid fa-cloud-sun"></i>
+          </div>
+          <div class="small-temp-top-1">-4°C</div>
+          <div class="small-temp-bottom-1">-7°C</div>
+        </div>
+        <div class="col">
+          <p>thu</p>
+          <div class="small-weather-2">
+            <i class="fa-solid fa-cloud-sun"></i>
+          </div>
+          <div class="small-temp-top-2">-6°C</div>
+          <div class="small-temp-bottom-2">-8°C</div>
+        </div>
+        <div class="col">
+          <p>fri</p>
+          <div class="small-weather-3">
+            <i class="fa-solid fa-cloud-sun"></i>
+          </div>
+          <div class="small-temp-top-3">-4°C</div>
+          <div class="small-temp-bottpm-3">-6°C</div>
+        </div>
+        <div class="col">
+          <p>sat</p>
+          <div class="small-weather-3">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <div class="small-temp-top-4">-3°C</div>
+          <div class="small-temp-bottom-4">-4°C</div>
+        </div>
+        <div class="col">
+          <p>sun</p>
+          <div class="small-weather-5">
+            <i class="fa-solid fa-cloud-sun"></i>
+          </div>
+          <div class="small-temp-top-5">-3°C</div>
+          <div class="small-temp-bottom-5">-6°C</div>
+        </div>
+      </div>
+    </div>
+    <!--java-->
+    <script src="src/index.js"></script>
+  </body>
+</html>

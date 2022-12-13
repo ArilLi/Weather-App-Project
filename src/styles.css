@@ -1,0 +1,129 @@
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+div.container {
+  display: block;
+  margin: 100px auto;
+  background: linear-gradient(
+    112.1deg,
+    rgb(32, 38, 57) 11.4%,
+    rgb(63, 76, 119) 70.2%
+  );
+  max-width: 800px;
+}
+
+form {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: white;
+  text-align: right;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+.text-field {
+  padding: 5px 80px;
+  border: none;
+  border-radius: 4px;
+}
+
+.row-2 {
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.large-weather {
+  color: white;
+  font-size: 180px;
+  padding: 0 0 0 50px;
+}
+
+.large-temperature {
+  color: white;
+  padding: 75px 0 30px;
+}
+
+.info {
+  font-size: 12px;
+  padding: 10px;
+}
+
+.time {
+  color: white;
+  text-align: right;
+}
+
+.row-3 {
+  text-align: center;
+  color: white;
+  margin: 20px 0 20px 0;
+  padding: 20px 0 50px 0;
+}
+
+.small-weather-1,
+.small-weather-2,
+.small-weather-3,
+.small-weather-4,
+.small-weather-5 {
+  font-size: 50px;
+}
+
+.small-temp-top-1,
+.small-temp-top-2,
+.small-temp-top-3,
+.small-temp-top-4,
+.small-temp-top-5 {
+  font-size: 15px;
+  padding: 10px 0 10px 0;
+}
+
+.small-bottom-top-1,
+.small-bottom-top-2,
+.small-bottom-top-3,
+.small-bottom-top-4,
+.small-bottom-top-5 {
+  font-size: 15px;
+  padding: 10px 0 0 0;
+}
+
+.fahrenheit,
+.celsius {
+  color: white;
+  text-decoration: none;
+}
+
+.fahrenheit:hover,
+.celsius:hover {
+  color: lightgray;
+}
+
+.temperature {
+  padding: 10px;
+}
+
+.go-button {
+  padding: 4px 10px;
+  background-color: transparent;
+  color: white;
+  border: 1.3px solid white;
+  border-radius: 4px;
+}
+
+.location-button {
+  margin: 20px 0px 20px 100px;
+  padding: 4px 10px;
+  background-color: transparent;
+  color: white;
+  border: 1.3px solid white;
+  border-radius: 4px;
+}
+
+.description {
+  padding: 0px 10px;
+}
