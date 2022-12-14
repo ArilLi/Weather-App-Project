@@ -99,9 +99,7 @@ function showLocWeather(response) {
   let icon = response.data.weather[0].icon;
 
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src", `icons/${icon}.svg`)
-  );
+  iconElement.setAttribute("src", `icons/${icon}.svg`);
 }
 
 function searchLocation(position) {
