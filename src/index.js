@@ -100,8 +100,7 @@ function showLocWeather(response) {
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${icon}@2x.png`
+    "src", `icons/${icon}.svg`)
   );
 }
 
