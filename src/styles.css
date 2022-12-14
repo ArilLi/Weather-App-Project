@@ -47,7 +47,7 @@ small {
 .large-weather {
   color: white;
   font-size: 180px;
-  padding: 0 0 0 50px;
+  padding: 40px 0 0 50px;
 }
 
 .large-temperature {
@@ -145,4 +145,8 @@ small {
 
 .git-hub-link:hover {
   color: lightgray;
+}
+
+.small-weather-3 {
+  padding: 0;
 }

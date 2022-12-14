@@ -51,10 +51,7 @@ function showCityWeather(response) {
   let icon = response.data.weather[0].icon;
 
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${icon}@2x.png`
-  );
+  iconElement.setAttribute("src", `icons/${icon}.svg`);
 }
 
 function search(city) {
