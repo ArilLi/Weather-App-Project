@@ -104,13 +104,13 @@ small {
 
 .fahrenheit,
 .celsius {
-  color: white;
+  color: gray;
   text-decoration: none;
 }
 
 .fahrenheit:hover,
 .celsius:hover {
-  color: lightgray;
+  color: white;
 }
 
 .temperature {
@@ -149,4 +149,9 @@ small {
 
 .small-weather-3 {
   padding: 0;
+}
+
+.active {
+  color: white;
+  cursor: default;
 }

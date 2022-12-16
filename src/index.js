@@ -28,7 +28,8 @@ function formatDate(timestamp) {
 //City Search
 
 function showCityWeather(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celTempGlobal = response.data.main.temp;
+  let temperature = Math.round(celTempGlobal);
   let displayTemperature = document.querySelector("#temperature");
   displayTemperature.innerHTML = temperature;
 
@@ -55,6 +56,9 @@ function showCityWeather(response) {
   let icon = response.data.weather[0].icon;
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `icons/${icon}.svg`);
+
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 
 function search(city) {
@@ -70,10 +74,11 @@ function searchCity(event) {
   search(city);
 }
 
-//Current Location Button
+//Current Location
 
 function showLocWeather(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celTempGlobal = response.data.main.temp;
+  let temperature = Math.round(celTempGlobal);
   let displayTemperature = document.querySelector("#temperature");
   displayTemperature.innerHTML = temperature;
 
@@ -100,6 +105,9 @@ function showLocWeather(response) {
   let icon = response.data.weather[0].icon;
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `icons/${icon}.svg`);
+
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
 }
 
 function searchLocation(position) {
@@ -116,12 +124,38 @@ function navigatePosition() {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-//Events
+//Temperature converter
+function showFahTemp(event) {
+  event.preventDefault();
+  let fahTemp = Math.round((celTempGlobal * 9) / 5 + 32);
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = fahTemp;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
 
-search("Stockholm");
+function showCelTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celTempGlobal);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+}
+
+//Global variables + Events
+
+let celTempGlobal = null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
 
 let currentLocationButton = document.querySelector("#location");
 currentLocationButton.addEventListener("click", navigatePosition);
+
+let fahrenheitLink = document.querySelector("#fah");
+fahrenheitLink.addEventListener("click", showFahTemp);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelTemp);
+
+search("Stockholm");
