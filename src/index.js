@@ -1,3 +1,5 @@
+//Format date
+
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hour = date.getHours();
@@ -27,29 +29,30 @@ function formatDate(timestamp) {
 
 function showCityWeather(response) {
   let temperature = Math.round(response.data.main.temp);
-
   let displayTemperature = document.querySelector("#temperature");
   displayTemperature.innerHTML = temperature;
 
   let location = response.data.name;
-
   let city = document.querySelector("#city");
   city.innerHTML = location;
 
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
-  document.querySelector("#humidity").innerHTML = Math.round(
-    response.data.main.humidity
-  );
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-  document.querySelector("#time").innerHTML = formatDate(
-    response.data.dt * 1000
-  );
+  let description = response.data.weather[0].main;
+  let displayDescription = document.querySelector("#description");
+  displayDescription.innerHTML = description;
+
+  let humidity = Math.round(response.data.main.humidity);
+  let displayHumidity = document.querySelector("#humidity");
+  displayHumidity.innerHTML = humidity;
+
+  let wind = Math.round(response.data.wind.speed);
+  let displayWind = document.querySelector("#wind");
+  displayWind.innerHTML = wind;
+
+  let time = formatDate(response.data.dt * 1000);
+  displayTime = document.querySelector("#time");
+  displayTime.innerHTML = time;
 
   let icon = response.data.weather[0].icon;
-
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `icons/${icon}.svg`);
 }
@@ -67,11 +70,6 @@ function searchCity(event) {
   search(city);
 }
 
-search("Stockholm");
-
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", searchCity);
-
 //Current Location Button
 
 function showLocWeather(response) {
@@ -80,24 +78,26 @@ function showLocWeather(response) {
   displayTemperature.innerHTML = temperature;
 
   let location = response.data.name;
-
   let city = document.querySelector("#city");
   city.innerHTML = location;
 
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
-  document.querySelector("#humidity").innerHTML = Math.round(
-    response.data.main.humidity
-  );
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-  document.querySelector("#time").innerHTML = formatDate(
-    response.data.dt * 1000
-  );
+  let description = response.data.weather[0].main;
+  let displayDescription = document.querySelector("#description");
+  displayDescription.innerHTML = description;
+
+  let humidity = Math.round(response.data.main.humidity);
+  let displayHumidity = document.querySelector("#humidity");
+  displayHumidity.innerHTML = humidity;
+
+  let wind = Math.round(response.data.wind.speed);
+  let displayWind = document.querySelector("#wind");
+  displayWind.innerHTML = wind;
+
+  let time = formatDate(response.data.dt * 1000);
+  displayTime = document.querySelector("#time");
+  displayTime.innerHTML = time;
 
   let icon = response.data.weather[0].icon;
-
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `icons/${icon}.svg`);
 }
@@ -105,12 +105,9 @@ function showLocWeather(response) {
 function searchLocation(position) {
   let long = position.coords.longitude;
   let lat = position.coords.latitude;
-
   let units = "metric";
-
   let apiKey = "58a6775f97527351bf6c6966e209be39";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=${units}`;
-  console.log(apiUrl);
 
   axios.get(apiUrl).then(showLocWeather);
 }
@@ -118,6 +115,13 @@ function searchLocation(position) {
 function navigatePosition() {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
+
+//Events
+
+search("Stockholm");
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", searchCity);
 
 let currentLocationButton = document.querySelector("#location");
 currentLocationButton.addEventListener("click", navigatePosition);
