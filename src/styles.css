@@ -85,7 +85,7 @@ small {
 .small-temp-bottom {
   font-size: 15px;
   padding: 10px 0 10px 0;
-  color: gray;
+  opacity: 0.5;
 }
 
 .small-temp-top {
