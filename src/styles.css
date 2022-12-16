@@ -66,38 +66,29 @@ small {
 }
 
 .row-3 {
-  text-align: center;
-  color: white;
-  margin: 20px 0 20px 0;
-  padding: 20px 0 20px 0;
+  margin: 0 0 20px 0;
 }
 
 .row-4 {
   padding: 0 0 20px 20px;
 }
 
-.small-weather-1,
-.small-weather-2,
-.small-weather-3,
-.small-weather-4,
-.small-weather-5 {
+.col-forecast {
+  text-align: center;
+  color: white;
+}
+
+.small-weather {
   font-size: 50px;
 }
 
-.small-temp-top-1,
-.small-temp-top-2,
-.small-temp-top-3,
-.small-temp-top-4,
-.small-temp-top-5 {
+.small-temp-bottom {
   font-size: 15px;
   padding: 10px 0 10px 0;
+  color: gray;
 }
 
-.small-bottom-top-1,
-.small-bottom-top-2,
-.small-bottom-top-3,
-.small-bottom-top-4,
-.small-bottom-top-5 {
+.small-temp-top {
   font-size: 15px;
   padding: 10px 0 0 0;
 }

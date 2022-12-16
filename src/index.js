@@ -59,6 +59,8 @@ function showCityWeather(response) {
 
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -108,6 +110,8 @@ function showLocWeather(response) {
 
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
+
+  getForecast(response.data.coord);
 }
 
 function searchLocation(position) {
@@ -140,6 +144,55 @@ function showCelTemp(event) {
   temperatureElement.innerHTML = Math.round(celTempGlobal);
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
+}
+
+//Forecast
+
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  forecastElement = document.querySelector("#jsforecast");
+
+  let forecastHTML = `<div class="row row-3">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2 col-forecast">
+            <p class="small-day">${formatForecastDay(forecastDay.dt)}</p>
+            <div class="small-weather">
+              <img src="icons/${forecastDay.weather[0].icon}.svg" width="60" />
+            </div>
+            <div class="small-temp-top">${Math.round(
+              forecastDay.temp.max
+            )}°</div>
+            <div class="small-temp-bottom">${Math.round(
+              forecastDay.temp.min
+            )}°</div>
+          </div>`;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "58a6775f97527351bf6c6966e209be39";
+  let lat = coordinates.lat;
+  let long = coordinates.lon;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //Global variables + Events
