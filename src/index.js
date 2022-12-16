@@ -57,9 +57,6 @@ function showCityWeather(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `icons/${icon}.svg`);
 
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-
   getForecast(response.data.coord);
 }
 
@@ -108,9 +105,6 @@ function showLocWeather(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `icons/${icon}.svg`);
 
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
-
   getForecast(response.data.coord);
 }
 
@@ -126,24 +120,6 @@ function searchLocation(position) {
 
 function navigatePosition() {
   navigator.geolocation.getCurrentPosition(searchLocation);
-}
-
-//Temperature converter
-function showFahTemp(event) {
-  event.preventDefault();
-  let fahTemp = Math.round((celTempGlobal * 9) / 5 + 32);
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = fahTemp;
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-function showCelTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celTempGlobal);
-  fahrenheitLink.classList.remove("active");
-  celsiusLink.classList.add("active");
 }
 
 //Forecast
@@ -204,11 +180,5 @@ searchForm.addEventListener("submit", searchCity);
 
 let currentLocationButton = document.querySelector("#location");
 currentLocationButton.addEventListener("click", navigatePosition);
-
-let fahrenheitLink = document.querySelector("#fah");
-fahrenheitLink.addEventListener("click", showFahTemp);
-
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", showCelTemp);
 
 search("Stockholm");
