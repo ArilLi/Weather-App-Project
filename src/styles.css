@@ -10,7 +10,8 @@ form {
 
 h1 {
   color: white;
-  text-align: right;
+  text-align: left;
+  padding: 0 0 0 40px;
 }
 
 h3 {
@@ -78,6 +79,7 @@ small {
 .large-temperature {
   color: white;
   padding: 75px 0 30px;
+  text-align: left;
 }
 
 .info {
@@ -87,7 +89,8 @@ small {
 
 .time {
   color: white;
-  text-align: right;
+  text-align: left;
+  padding: 0 0 0 40px;
 }
 
 .row-1 {
