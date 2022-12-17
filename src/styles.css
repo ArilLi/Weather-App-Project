@@ -2,7 +2,7 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-div.container {
+.container {
   display: block;
   margin: 100px auto;
   background: linear-gradient(
@@ -11,6 +11,26 @@ div.container {
     rgb(63, 76, 119) 70.2%
   );
   max-width: 800px;
+}
+
+.color-1 {
+  background: linear-gradient(
+    109.6deg,
+    rgb(27, 27, 79) 11.2%,
+    rgb(120, 201, 244) 100.2%
+  );
+}
+
+.color-2 {
+  background: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
+}
+
+.color-3 {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(208, 89, 109) 0%,
+    rgb(231, 156, 118) 90%
+  );
 }
 
 form {
@@ -85,7 +105,6 @@ small {
 .small-temp-bottom {
   font-size: 15px;
   padding: 10px 0 10px 0;
-  opacity: 0.5;
 }
 
 .small-temp-top {

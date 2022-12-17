@@ -33,6 +33,21 @@ function showCityWeather(response) {
   let displayTemperature = document.querySelector("#temperature");
   displayTemperature.innerHTML = temperature;
 
+  test = document.querySelector("#container");
+
+  if (temperature < 0) {
+    test.classList.add("color-1");
+    test.classList.remove("color-2", "color-3");
+  } else {
+    if (temperature > 20) {
+      test.classList.add("color-3");
+      test.classList.remove("color1", "color-2");
+    } else {
+      test.classList.add("color-2");
+      test.classList.remove("color-1", "color-3");
+    }
+  }
+
   let location = response.data.name;
   let city = document.querySelector("#city");
   city.innerHTML = location;
