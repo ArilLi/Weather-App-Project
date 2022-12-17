@@ -2,6 +2,27 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
+form {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+h1 {
+  color: white;
+  text-align: right;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+small {
+  color: white;
+  padding: 20px 0px 20px 20px;
+  font-size: 12px;
+}
+
 .container {
   display: block;
   margin: 100px auto;
@@ -33,28 +54,8 @@ body {
   );
 }
 
-form {
-  margin: 0 auto;
-  padding: 20px;
-}
-
-h1 {
-  color: white;
-  text-align: right;
-}
-
-h3 {
-  font-size: 25px;
-}
-
-small {
-  color: white;
-  padding: 20px 0px 20px 20px;
-  font-size: 12px;
-}
-
 .text-field {
-  padding: 5px 80px;
+  padding: 5px 60px;
   border: none;
   border-radius: 4px;
 }
@@ -62,6 +63,10 @@ small {
 .row-2 {
   margin-top: 50px;
   margin-bottom: 70px;
+}
+
+.colform {
+  padding: 0 0 0 50px;
 }
 
 .large-weather {
@@ -83,6 +88,10 @@ small {
 .time {
   color: white;
   text-align: right;
+}
+
+.row-1 {
+  padding: 20px 0 0 0;
 }
 
 .row-3 {
@@ -133,10 +142,11 @@ small {
   color: white;
   border: 1.3px solid white;
   border-radius: 4px;
+  margin: 5px auto;
 }
 
 .location-button {
-  margin: 20px 0px 20px 100px;
+  margin: 5px auto;
   padding: 4px 10px;
   background-color: transparent;
   color: white;

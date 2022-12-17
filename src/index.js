@@ -175,7 +175,7 @@ function displayForecast(response) {
         `<div class="col-2 col-forecast">
             <p class="small-day">${formatForecastDay(forecastDay.dt)}</p>
             <div class="small-weather">
-              <img src="icons/${forecastDay.weather[0].icon}.svg" width="60" />
+              <img src="icons/${forecastDay.weather[0].icon}.svg" width="40" />
             </div>
             <div class="small-temp-top">${Math.round(
               forecastDay.temp.max
