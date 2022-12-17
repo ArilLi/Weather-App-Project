@@ -39,7 +39,7 @@ function showCityWeather(response) {
     test.classList.add("color-1");
     test.classList.remove("color-2", "color-3");
   } else {
-    if (temperature > 20) {
+    if (temperature > 19) {
       test.classList.add("color-3");
       test.classList.remove("color1", "color-2");
     } else {
